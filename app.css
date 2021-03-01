@@ -3,48 +3,74 @@
 }
 
 body {
-    background: #1b262fbe;
+    background-image:url("https://i.imgur.com/535dy7i.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
 .box {
     width: 500px;
-    height: 600px;
+    height: 500px;
     margin: auto;
-    margin-top: 10%;
-
+    background-color:rgb(187, 187, 187);
+    box-shadow: 20px 20px 20px 20px #000000cc;
+    border-radius: 10px;
+    
 }
 .container {
   width: 1080px;
   margin: 0 auto;
+  
 }
 
 .card {
   float: left;
-  margin: 10px;
+  margin: 12px;
   height: 100px;
   width: 100px;
-  background: #73b78b;
+  background-image:url("https://i.imgur.com/vxuLMul.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   text-align: center;
-  border-radius: 2px;
-  box-shadow: 8px 8px 8px #1b262f38;
+  border-radius: 10px;
+  box-shadow: 8px 8px 8px #000000cc;
   opacity: 100%;
-  transition: .8s;
+  transition: .5s;
 }
 
 .card:hover {
   cursor: pointer;
-  border: 3px solid #c6db94;
+  border: 3px solid #db234b93;
   opacity: 75%;
-  transition: .8s;
+  transition: .5s;
 
 }
 
 .card p {
   font-size: 48px;
-  color: #f9f9a6;
+  color:  #db234be5;
+  background-image:url("https://i.imgur.com/535dy7i.jpg");
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 h1{
+    text-align: center;
+    font-size: 60px;
+    color: #000000;
+    font-family: Courier New;
+    font-style: italic;
+}
+
+h2{
+    padding-right: 60%;
     font-size: 100px;
-    color: hotpink;
+    color: #000000;
+    font-family: Garamond;
 }

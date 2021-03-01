@@ -1,10 +1,10 @@
 $(document).ready(function() {
   var app = {
-    cards: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10],
-    init: function() {
+    cards: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8],
+    init: () => {
       app.shuffle();
     },
-    shuffle: function() {
+    shuffle: () => {
       var random = 0;
       var temp = 0;
       for (i = 1; i < app.cards.length; i++) {
@@ -16,22 +16,24 @@ $(document).ready(function() {
       app.assignCards();
       console.log('Shuffled Card Array: ' + app.cards);
     },
-    assignCards: function() {
+    assignCards: () => {
       $('.card').each(function(index) {
         $(this).attr('data-card-value', app.cards[index]);
       });
       app.clickHandlers();
     },
-    clickHandlers: function() {
+    clickHandlers: () => {
       $('.card').on('click', function() {
         $(this).html('<p>' + $(this).data('cardValue') + '</p>').addClass('selected');
         app.checkMatch();
       });
     },
-    checkMatch: function() {
+    
+    checkMatch: () => {
       if ($('.selected').length === 2) {
         if ($('.selected').first().data('cardValue') == $('.selected').last().data('cardValue')) {
           $('.selected').each(function() {
+            
             $(this).animate({
               opacity: 0
             }).removeClass('unmatched');
@@ -45,13 +47,13 @@ $(document).ready(function() {
             $('.selected').each(function() {
               $(this).html('').removeClass('selected');
             });
-          }, 1000);
+          }, 600);
         }
       }
     },
     checkWin: function() {
       if ($('.unmatched').length === 0) {
-        $('.container').html('<h1>YOU HAVE WON!</h1>');
+        $('.container').html('<h2>YOU HAVE WON!</h2>');
       }
     }
   };
